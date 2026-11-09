@@ -1,5 +1,5 @@
 import time
-seconds = int(input("Enter number of seconds to count down from: "))
+
 word_map = {
     5 : "five",
     4 : "four",
@@ -7,9 +7,14 @@ word_map = {
     2 : "two", 
     1 : "one",
 }
-for i in range(seconds, -1, -1):
-    if i in word_map:
-        print(word_map[i])
+countdown = int(input("Enter the number of seconds to count down: "))
+
+while countdown > 0:
+    if countdown >= 1 and countdown <= 5:
+        print(f"{word_map[countdown]} ")
     else:
-        print(i)
-    time.sleep(1)
+        print(f"{countdown}")
+    countdown -= 1
+    time.sleep(1)  # Wait for 1 second
+
+print("Time's up!")
